@@ -7,6 +7,8 @@ const authentication = (req , res, next) =>{
         return res.send("plz login again")
     }
 
+
+    
     const token = req.headers.authorization.split(" ")[1]
     jwt.verify(token, process.env.secretCode, function (err, decoded){
         if (err){
